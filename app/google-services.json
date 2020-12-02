@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "539483763058",
+    "firebase_url": "https://nativeappstasks.firebaseio.com",
+    "project_id": "nativeappstasks",
+    "storage_bucket": "nativeappstasks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539483763058:android:185ba50dd99bd3e08a2deb",
+        "android_client_info": {
+          "package_name": "com.dziugaspeciulevicius.nativeappstasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539483763058-tkdhbir5ag0icp9241150ogearq5tvoj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dziugaspeciulevicius.nativeappstasks",
+            "certificate_hash": "4e8c8c46f5007379b9077929244b6da408d0c73d"
+          }
+        },
+        {
+          "client_id": "539483763058-tp1hr0krh1dlcg6j8v0jo873ho0h40bd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsELsg76wxBzUIkC6ZpWJ9kS6FOhqTYRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539483763058-tp1hr0krh1dlcg6j8v0jo873ho0h40bd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+
+import androidx.navigation.fragment.findNavController
 
 class SplashActivity : AppCompatActivity() {
 
@@ -18,7 +22,6 @@ class SplashActivity : AppCompatActivity() {
             // Start your app main activity
 
             startActivity(Intent(this,MainActivity::class.java))
-
             // close this activity
             finish()
         }, SPLASH_TIME_OUT)
