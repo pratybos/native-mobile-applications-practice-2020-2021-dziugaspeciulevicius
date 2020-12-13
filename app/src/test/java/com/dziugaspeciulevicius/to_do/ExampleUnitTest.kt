@@ -1,4 +1,4 @@
-package com.dziugaspeciulevicius.nativeappstasks
+package com.dziugaspeciulevicius.to_do
 
 import org.junit.Test
 
