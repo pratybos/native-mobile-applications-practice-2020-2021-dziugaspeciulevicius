@@ -18,7 +18,7 @@ object ShoppingCartRepository {
         val document = db.collection("users")
             .document(user!!.uid)
             .collection("shopping_cart")
-            .document()
+            .document("${item.id}")
 
         // setting item to the database
         return document.set(item)
@@ -30,7 +30,7 @@ object ShoppingCartRepository {
     }
 
     fun removeItemFromShoppingCart(item: Item): Task<Void>{
-        val document = db.collection("users/${user!!.uid}/shopping_cart").document(item.name)
+        val document = db.collection("users/${user!!.uid}/shopping_cart").document("${item.id}")
         return document.delete()
     }
 }

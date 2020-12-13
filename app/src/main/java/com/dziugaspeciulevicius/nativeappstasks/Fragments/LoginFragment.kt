@@ -12,12 +12,12 @@ import com.dziugaspeciulevicius.nativeappstasks.ViewModels.ShoppingCartViewModel
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
+import java.util.*
 
 const val RC_SIGN_IN = 123
 class LoginFragment : Fragment() {
 
     lateinit var shoppingCartViewModel: ShoppingCartViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +50,8 @@ class LoginFragment : Fragment() {
                 val user = FirebaseAuth.getInstance().currentUser
                 Toast.makeText(context, "Success!!!", Toast.LENGTH_LONG).show()
 
-                shoppingCartViewModel.addToCart(Item("Women Jeans", 29.99, "https://image.shutterstock.com/image-photo/3-shot-woman-blue-jeans-260nw-690960433.jpg"))
-                
+//                shoppingCartViewModel.addToCart(Item(Random().nextLong(),"Women Jeans", 29.99, "https://image.shutterstock.com/image-photo/3-shot-woman-blue-jeans-260nw-690960433.jpg"))
+
 
                 // ...
             } else {
