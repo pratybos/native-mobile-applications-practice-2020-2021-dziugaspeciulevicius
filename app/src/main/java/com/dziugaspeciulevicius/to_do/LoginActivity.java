@@ -61,11 +61,14 @@ public class LoginActivity extends AppCompatActivity {
 
         // login action
         loginButton.setOnClickListener(new View.OnClickListener() {
+            // when login is clicked run onClick listener
             @Override
             public void onClick(View view) {
+                // get email and password
                 String email = loginEmail.getText().toString().trim();
                 String password = loginPassword.getText().toString().trim();
 
+                // we check for email and password
                 if(TextUtils.isEmpty(email)) {
                     loginEmail.setError("Email is required");
                     return;
@@ -74,21 +77,28 @@ public class LoginActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(password)) {
                     loginPassword.setError("Password is required");
                     return;
+                // if it's not empty perform login functionality
                 } else {
                     loader.setMessage("Login in progress");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
-
+                    // login user
                     mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            // if login successful
                             if (task.isSuccessful()) {
+                                // create intent
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                // start and finish activity
                                 startActivity(intent);
                                 finish();
                                 loader.dismiss();
+                            // if login unsuccessful
                             } else {
+                                // get error
                                 String error = task.getException().toString();
+                                // show error
                                 Toast.makeText(LoginActivity.this, "Login failed " + error, Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
                             }

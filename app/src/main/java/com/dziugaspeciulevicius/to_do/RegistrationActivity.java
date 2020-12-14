@@ -28,8 +28,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button registrationButton;
     private TextView registrationRedirect;
     private FirebaseAuth mAuth; // according to firebase we need to declare FirebaseAuth instance
-
-    private ProgressDialog loader;
+    private ProgressDialog loader;  // loader to inform user
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         // then we initialize FirebaseAuth instance in the onCreate() method
         mAuth = FirebaseAuth.getInstance();
-        loader = new ProgressDialog(this);
+        loader = new ProgressDialog(this);  //
 
         registrationEmail = findViewById(R.id.RegistrationEmail);
         registrationPassword = findViewById(R.id.RegistrationPassword);
@@ -68,6 +67,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 String email = registrationEmail.getText().toString().trim();
                 String password = registrationPassword.getText().toString().trim();
 
+                // we then check for email and password
                 if (TextUtils.isEmpty(email)) {
                    registrationEmail.setError("Email is required");
                    return;
@@ -75,30 +75,35 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(password)) {
                     registrationPassword.setError("Password is required");
+                    return;
+                 // if it's not empty we start implementing registration functionality
                 } else {
                     loader.setMessage("Registration in progress");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
+                    // creates user
                     mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            // if registration is successful
                             if (task.isSuccessful()) {
+                                // create intent and go to homeActivity
                                 Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                // start activity and later finish it
                                 startActivity(intent);
                                 finish();
                                 loader.dismiss();
+                            // if registration unsuccessful
                             } else {
+                                // get error
                                 String error = task.getException().toString();
-                                Toast.makeText(RegistrationActivity.this, "Registration failed" + error, Toast.LENGTH_SHORT).show();
+                                // show error
+                                Toast.makeText(RegistrationActivity.this, "Registration failed " + error, Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
                             }
-
-
                         }
                     });
                 }
-
-
             }
         });
     }
