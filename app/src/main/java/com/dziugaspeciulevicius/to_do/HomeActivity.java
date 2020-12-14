@@ -14,6 +14,12 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // hide top action bar
+        try {
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e){}
+
         setContentView(R.layout.activity_home);
 
         // Initialize and Assign variable

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="#000"
     tools:context=".MainActivity">
 
 
@@ -18,7 +18,7 @@
         android:gravity="center"
         android:padding="30dp"
         android:text="Welcome to my to-do list app"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="20dp"
         android:textStyle="bold" />
 
