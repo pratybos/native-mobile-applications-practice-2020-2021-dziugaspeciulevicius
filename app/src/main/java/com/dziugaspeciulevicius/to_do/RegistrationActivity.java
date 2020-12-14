@@ -1,14 +1,25 @@
 package com.dziugaspeciulevicius.to_do;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import org.jetbrains.annotations.NotNull;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -16,6 +27,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText registrationEmail, registrationPassword;
     private Button registrationButton;
     private TextView registrationRedirect;
+    private FirebaseAuth mAuth; // according to firebase we need to declare FirebaseAuth instance
+
+    private ProgressDialog loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +42,10 @@ public class RegistrationActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().setTitle("Register");
 
+        // then we initialize FirebaseAuth instance in the onCreate() method
+        mAuth = FirebaseAuth.getInstance();
+        loader = new ProgressDialog(this);
+
         registrationEmail = findViewById(R.id.RegistrationEmail);
         registrationPassword = findViewById(R.id.RegistrationPassword);
         registrationButton = findViewById(R.id.RegistrationButton);
@@ -39,6 +57,48 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // registration action
+        registrationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // we need to get email and password
+                String email = registrationEmail.getText().toString().trim();
+                String password = registrationPassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+                   registrationEmail.setError("Email is required");
+                   return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    registrationPassword.setError("Password is required");
+                } else {
+                    loader.setMessage("Registration in progress");
+                    loader.setCanceledOnTouchOutside(false);
+                    loader.show();
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                                loader.dismiss();
+                            } else {
+                                String error = task.getException().toString();
+                                Toast.makeText(RegistrationActivity.this, "Registration failed" + error, Toast.LENGTH_SHORT).show();
+                                loader.dismiss();
+                            }
+
+
+                        }
+                    });
+                }
+
+
             }
         });
     }

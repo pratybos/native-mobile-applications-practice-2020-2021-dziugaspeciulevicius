@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "501822388063",
+    "project_id": "native-to-do",
+    "storage_bucket": "native-to-do.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501822388063:android:f37640f3c3e9f0fb2b68ea",
+        "android_client_info": {
+          "package_name": "com.dziugaspeciulevicius.to_do"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501822388063-rnrg4f7sr3sm5ens6597apidjijktt6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dziugaspeciulevicius.to_do",
+            "certificate_hash": "4e8c8c46f5007379b9077929244b6da408d0c73d"
+          }
+        },
+        {
+          "client_id": "501822388063-sv724v3lr3drsofak89p090jcj6d0dvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA78TD8JzaDg0Oqsu9_c9IJJVrSr244sLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501822388063-sv724v3lr3drsofak89p090jcj6d0dvp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
