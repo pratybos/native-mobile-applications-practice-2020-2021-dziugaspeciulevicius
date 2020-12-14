@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_design"
+    tools:context=".RegistrationActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="150dp"
+        android:text="Register"
+        android:textColor="#fff"
+
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/RegistrationEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter email"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/inputs"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/RegistrationPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter password"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:inputType="textPassword"
+        android:background="@drawable/inputs"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="10dp"
+        />
+
+    <Button
+        android:id="@+id/RegistrationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="#64B6FF"
+        android:radius="20dp"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/RegistrationPageLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Have an account? Login"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+
+</LinearLayout>
