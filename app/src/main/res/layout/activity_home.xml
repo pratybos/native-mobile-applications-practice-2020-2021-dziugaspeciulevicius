@@ -9,15 +9,15 @@
     android:orientation="vertical"
     tools:context=".HomeActivity">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Home"-->
-<!--        android:textSize="50dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        />-->
-<!--        &lt;!&ndash; ^ true aligns to center&ndash;&gt;-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        />
+        <!-- ^ true aligns to center-->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/homeToolbar"
@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
+                android:id="@+id/floating_create_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
