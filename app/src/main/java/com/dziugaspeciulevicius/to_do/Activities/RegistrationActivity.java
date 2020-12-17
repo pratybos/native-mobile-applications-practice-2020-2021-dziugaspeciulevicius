@@ -1,4 +1,4 @@
-package com.dziugaspeciulevicius.to_do;
+package com.dziugaspeciulevicius.to_do.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,17 +14,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dziugaspeciulevicius.to_do.Models.User;
+import com.dziugaspeciulevicius.to_do.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.jetbrains.annotations.NotNull;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
 
     //    private Toolbar toolbar;
-    private EditText registrationEmail, registrationPassword;
+    private EditText registrationName, registrationEmail, registrationPassword;
     private Button registrationButton;
     private TextView registrationRedirect;
     private FirebaseAuth mAuth; // according to firebase we need to declare FirebaseAuth instance
@@ -50,6 +51,7 @@ public class RegistrationActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);  //
 
+        registrationName = findViewById(R.id.RegistrationName);
         registrationEmail = findViewById(R.id.RegistrationEmail);
         registrationPassword = findViewById(R.id.RegistrationPassword);
         registrationButton = findViewById(R.id.RegistrationButton);
@@ -69,10 +71,16 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // we need to get email and password
+                String name = registrationName.getText().toString().trim();
                 String email = registrationEmail.getText().toString().trim();
                 String password = registrationPassword.getText().toString().trim();
 
-                // we then check for email and password
+                // we then check for name, email and password
+                if (TextUtils.isEmpty(name)) {
+                    registrationName.setError("Nickname is required");
+                    return;
+                }
+
                 if (TextUtils.isEmpty(email)) {
                    registrationEmail.setError("Email is required");
                    return;
@@ -87,13 +95,21 @@ public class RegistrationActivity extends AppCompatActivity {
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
                     // creates user
+
                     mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             // if registration is successful
                             if (task.isSuccessful()) {
+
+                                User user = new User ( name, email, password );
+
+                                FirebaseDatabase.getInstance().getReference("Users").child(
+                                        FirebaseAuth.getInstance().getCurrentUser().getUid()
+                                ).setValue(user);
+
                                 // create intent and go to homeActivity
-                                Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                                 // start activity and later finish it
                                 startActivity(intent);
                                 finish();

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background_design"
-    tools:context=".RegistrationActivity">
+    tools:context=".Activities.RegistrationActivity">
 
     <TextView
         android:id="@+id/textView3"
@@ -20,12 +20,30 @@
         android:textSize="36sp" />
 
     <EditText
+        android:id="@+id/RegistrationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter nickname"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:inputType="text"
+        android:background="@drawable/inputs"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        />
+
+    <EditText
         android:id="@+id/RegistrationEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter email"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:textColor="#fff"
@@ -63,7 +81,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:background="#64B6FF"
+        android:background="@color/black"
         android:radius="20dp"
         android:text="Register"
         android:textAllCaps="false"

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">to-do</string>
+    <string name="hello_blank_fragment">Labas, tuščias fragmentas</string>
+    <string name="Home">Pradžia</string>
+    <string name="Profile">Profilis</string>
+</resources>
