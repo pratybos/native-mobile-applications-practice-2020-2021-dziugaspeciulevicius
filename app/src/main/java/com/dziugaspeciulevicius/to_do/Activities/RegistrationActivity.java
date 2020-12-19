@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    //    private Toolbar toolbar;
     private EditText registrationName, registrationEmail, registrationPassword;
     private Button registrationButton;
     private TextView registrationRedirect;
@@ -42,10 +41,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_registration);
-
-        //        toolbar = findViewById(R.id.loginToolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Register");
 
         // then we initialize FirebaseAuth instance in the onCreate() method
         mAuth = FirebaseAuth.getInstance();

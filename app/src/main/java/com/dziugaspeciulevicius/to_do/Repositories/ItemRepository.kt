@@ -5,18 +5,20 @@ import androidx.lifecycle.MutableLiveData
 import com.dziugaspeciulevicius.to_do.Models.Item
 
 object ItemRepository {
-    // in repository we get our data from the server
+    val db = mutableListOf<Item>()
+    val mutableList = MutableLiveData<List<Item>>()
 
-//    val db = mutableListOf<Item>()
-//    val mutableList = MutableLiveData<List<Item>>()
-//
-//    fun getItems(): LiveData<List<Item>>{
-//
-//        return mutableList
-//    }
+    fun getItems(): LiveData<List<Item>> {
+        db.clear()
+//        loadFromAnySource()
+        mutableList.value = db
+        return mutableList
+    }
 
-////     we can load from web source or any other source
 //    fun loadFromAnySource() {
-//        db.add(Item("Do this", "Don't forget to do this and that",));
+//        db.add(Item("Take out trash1", "take out trash in detail1"))
+//        db.add(Item("Take out trash2", "take out trash in detail2"))
+//        db.add(Item("Take out trash3", "take out trash in detail3 take out trash in detail3take out trash in detail3take out trash in detail3"))
 //    }
+
 }

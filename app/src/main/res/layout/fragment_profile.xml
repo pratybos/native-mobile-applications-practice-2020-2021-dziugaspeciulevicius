@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,40 +13,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"
         android:layout_x="106dp"
         android:layout_y="203dp"
+        android:gravity="center"
         android:text="Name surname"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/mail"
-        android:layout_width="199dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
         android:layout_x="111dp"
         android:layout_y="259dp"
         android:text="Email"
         android:textSize="22dp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_x="142dp"
-        android:layout_y="45dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/profile_image" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="301dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:layout_x="50dp"
         android:layout_y="500dp"
         android:background="#800000	"
         android:text="Logout"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
-</AbsoluteLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

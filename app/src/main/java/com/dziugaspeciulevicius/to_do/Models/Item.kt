@@ -1,3 +1,7 @@
 package com.dziugaspeciulevicius.to_do.Models
 
-class Item(var name: String, var description: String, var id: String)
+data class Item(
+    var id: Long = 0L,
+    var name: String="",
+    var description: String=""
+)
