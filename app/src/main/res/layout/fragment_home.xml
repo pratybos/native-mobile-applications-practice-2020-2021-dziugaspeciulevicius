@@ -7,6 +7,18 @@
     tools:context=".Fragments.HomeFragment"
     android:background="@drawable/background_design">
 
+    <androidx.emoji.widget.EmojiTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:text="@string/emoji"
+        android:textFontWeight="700"
+
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/floating_create_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_recycleView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_create_button"

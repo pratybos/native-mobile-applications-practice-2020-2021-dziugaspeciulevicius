@@ -2,6 +2,8 @@ package com.dziugaspeciulevicius.to_do.Activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.emoji.bundled.BundledEmojiCompatConfig
+import androidx.emoji.text.EmojiCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.dziugaspeciulevicius.to_do.R
@@ -13,6 +15,9 @@ import com.google.firebase.auth.FirebaseUser
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        // emoji config
+        val config = BundledEmojiCompatConfig(this)
+        EmojiCompat.init(config)
 
         super.onCreate(savedInstanceState)
 

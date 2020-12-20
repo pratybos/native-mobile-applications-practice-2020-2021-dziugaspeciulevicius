@@ -25,19 +25,12 @@ import java.lang.String
 
 class ProfileFragment : Fragment() {
 
-
-//    val nameInput: EditText? = activity?.findViewById(R.id.name_profile) as EditText
-//    val emailInput: EditText? = activity?.findViewById(R.id.email_profile) as EditText
-//    val passwordInput: EditText? = activity?.findViewById(R.id.password_profile) as EditText
-private var mGoogleSignInClient: GoogleSignInClient? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         val logout: Button? = activity?.findViewById(R.id.logout)
         val name: TextView? = activity?.findViewById(R.id.name)
@@ -66,10 +59,6 @@ private var mGoogleSignInClient: GoogleSignInClient? = null
             Glide.with(this).load(String.valueOf(image)).into(imageView)
         }
 
-        // get user info and display logged in user from a db
-        // show all data
-//        showAllUserData()
-
         // log out button click action
         logout?.setOnClickListener {
             Toast.makeText(context, "Logging out", Toast.LENGTH_LONG).show();
@@ -78,8 +67,12 @@ private var mGoogleSignInClient: GoogleSignInClient? = null
 //            mGoogleSignInClient?.signOut()
 
             // Inflate the layout for this fragment
-            val i = Intent(activity, LoginActivity::class.java)
-            startActivity(i)
+            val intent = Intent(activity, LoginActivity::class.java)
+            // Closing all the Activities
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            // Add new Flag to start new Activity
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent)
             (activity as Activity?)!!.overridePendingTransition(0, 0)
 
             // play windows log out
@@ -87,19 +80,6 @@ private var mGoogleSignInClient: GoogleSignInClient? = null
 
         }
     }
-
-//    private fun showAllUserData() {
-//        val intent = getIntent()
-//        val user_name = intent.getStringExtra("name")
-//        val user_email = intent.getStringExtra("email")
-//        val user_password = intent.getStringExtra("password")
-//
-//
-//        nameInput.getEditText().setText(user_name)
-//        emailInput.getEditText().setText(user_email)
-//        passwordInput.getEditText().setText(user_password)
-//    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

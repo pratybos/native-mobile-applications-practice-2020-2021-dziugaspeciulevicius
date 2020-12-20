@@ -29,6 +29,7 @@ object TodoRepository {
         val document = db.
         collection("users/${user!!.uid}/todoList").
         document("${item.id}")
+//        document()
 
         // delete document
         return document.delete()

@@ -10,10 +10,7 @@
 //import android.view.View;
 //import android.widget.Toolbar;
 //
-//import com.bumptech.glide.Glide;
 //import com.dziugaspeciulevicius.to_do.R;
-//import com.google.android.gms.auth.api.signin.GoogleSignIn;
-//import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 //import com.google.android.material.bottomnavigation.BottomNavigationView;
 //import com.google.android.material.floatingactionbutton.FloatingActionButton;
 //import com.google.firebase.auth.FirebaseAuth;
@@ -118,7 +115,6 @@
 //    // add task action
 //    private void addTask() {
 //        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-//        // what does inflater do exactly? Does not really work without it
 //        LayoutInflater inflater = LayoutInflater.from(this);
 //
 //        View myView = inflater.inflate(R.layout.input_box, null);
