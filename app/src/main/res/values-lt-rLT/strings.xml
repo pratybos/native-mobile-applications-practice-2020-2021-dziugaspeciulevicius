@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">to-do</string>
-    <string name="hello_blank_fragment">Labas, tuščias fragmentas</string>
+    <string name="hello_blank_fragment">Tuščias fragmentas :(</string>
     <string name="Home">Pradžia</string>
     <string name="Profile">Profilis</string>
+    <string name="emoji_text">Pridėk "to-do" čia &#10145;</string>
+    <string name="logout">Atsijungti</string>
+    <string name="login">Prisijungimas</string>
+    <string name="hintEmail">El. paštas</string>
+    <string name="hintPassword">Slaptažodis</string>
+    <string name="loginButton">Prisijungti</string>
+    <string name="redirectToRegister">Neturite paskyros? Prisiregistruokite</string>
+    <string name="otherSignInOptions">Kitos prisijungimo galimybės: </string>
+    <string name="signInWithGoogle">Prisijungti su Google</string>
+    <string name="register">Registracija</string>
+    <string name="enterNickname">Slapyvardis</string>
+    <string name="registerButton">Prisiregistruoti</string>
+    <string name="redirectToLogin">Turite paskyrą? Prisijunkite</string>
 </resources>

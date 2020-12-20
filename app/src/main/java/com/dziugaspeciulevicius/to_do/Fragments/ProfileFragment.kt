@@ -77,7 +77,6 @@ class ProfileFragment : Fragment() {
 
             // play windows log out
             mediaPlayer.start();
-
         }
     }
 

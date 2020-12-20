@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingTop="150dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#fff"
 
         android:textSize="36sp" />
@@ -23,7 +23,7 @@
         android:id="@+id/loginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter email"
+        android:hint="@string/hintEmail"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
@@ -41,7 +41,7 @@
         android:id="@+id/loginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter password"
+        android:hint="@string/hintPassword"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="20dp"
@@ -65,7 +65,7 @@
         android:layout_marginLeft="20dp"
         android:background="@color/black"
         android:radius="20dp"
-        android:text="Login"
+        android:text="@string/loginButton"
         android:textAllCaps="false"
         android:textColor="#fff" />
 
@@ -73,7 +73,7 @@
         android:id="@+id/loginPageRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Register"
+        android:text="@string/redirectToRegister"
         android:textColor="#fff"
         android:gravity="center"
         android:layout_marginTop="10dp"/>
@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="50dp"
-        android:text="Other sign in options:"
+        android:text="@string/otherSignInOptions"
         android:textColor="#fff"
         android:gravity="center"
         android:layout_marginTop="10dp"/>
@@ -97,7 +97,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimaryDark"
         android:radius="20dp"
-        android:text="Sign in with google"
+        android:text="@string/signInWithGoogle"
         android:textAllCaps="false"
         android:textColor="#fff" />
 </LinearLayout>

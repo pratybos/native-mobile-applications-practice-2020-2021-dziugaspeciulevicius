@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingTop="150dp"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="#fff"
 
         android:textSize="36sp" />
@@ -23,7 +23,7 @@
         android:id="@+id/RegistrationName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter nickname"
+        android:hint="@string/enterNickname"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
@@ -41,7 +41,7 @@
         android:id="@+id/RegistrationEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter email"
+        android:hint="@string/hintEmail"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -59,7 +59,7 @@
         android:id="@+id/RegistrationPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter password"
+        android:hint="@string/hintPassword"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="20dp"
@@ -83,7 +83,7 @@
         android:layout_marginLeft="20dp"
         android:background="@color/black"
         android:radius="20dp"
-        android:text="Register"
+        android:text="@string/registerButton"
         android:textAllCaps="false"
         android:textColor="#fff" />
 
@@ -91,7 +91,7 @@
         android:id="@+id/RegistrationPageLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Have an account? Login"
+        android:text="@string/redirectToLogin"
         android:textColor="#fff"
         android:gravity="center"
         android:layout_marginTop="10dp"/>

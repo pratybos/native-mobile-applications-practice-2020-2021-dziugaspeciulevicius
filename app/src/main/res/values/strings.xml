@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">to-do</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Home">Home</string>
     <string name="Profile">Profile</string>
-    <string name="emoji">Add task here  &#10024;</string>
+    <string name="emoji_text">Add task here &#x27a1;</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+    <string name="hintEmail">Enter email</string>
+    <string name="hintPassword">Enter password</string>
+    <string name="loginButton">Login</string>
+    <string name="redirectToRegister">"Don't have an account? Register"</string>
+    <string name="otherSignInOptions">Other sign in options:</string>
+    <string name="signInWithGoogle">Sign in with Google</string>
+    <string name="register">Registration</string>
+    <string name="enterNickname">Enter nickname</string>
+    <string name="registerButton">Register</string>
+    <string name="redirectToLogin">Have an account? Login</string>
+
 </resources>
