@@ -40,6 +40,7 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
             if (adapterPosition == RecyclerView.NO_POSITION) return
 
             val clicked = getItem(adapterPosition)
+            interaction?.click_item(clicked)
         }
 
         fun bind(item: Item) = with(itemView) {
@@ -51,7 +52,7 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
 
     // we can create interactions with items here
     interface Interaction {
-
+        fun click_item(item: Item);
     }
 
     private class ItemDC : DiffUtil.ItemCallback<Item>() {

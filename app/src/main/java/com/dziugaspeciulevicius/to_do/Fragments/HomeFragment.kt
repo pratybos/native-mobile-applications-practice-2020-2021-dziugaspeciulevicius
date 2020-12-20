@@ -1,5 +1,6 @@
 package com.dziugaspeciulevicius.to_do.Fragments
 
+import DeleteDialogFragment
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -25,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import java.util.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), ItemListAdapter.Interaction {
 
     // we initialize this later
     private lateinit var itemViewModel: ItemViewModel
@@ -45,9 +47,10 @@ class HomeFragment : Fragment() {
         itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
         todoViewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
         val floatingActionButton: FloatingActionButton? = activity?.findViewById(R.id.floating_create_button)
+        val deleteTask: ImageButton? = activity?.findViewById(R.id.delete_task)
 
         // fill recycle view by lazy loading to save memory
-        val itemListAdapter: ItemListAdapter by lazy { ItemListAdapter() }
+        val itemListAdapter: ItemListAdapter by lazy { ItemListAdapter(this) }
 
         // display to-do list
         val user = FirebaseAuth.getInstance().currentUser
@@ -68,6 +71,12 @@ class HomeFragment : Fragment() {
         floatingActionButton?.setOnClickListener {
             addTask()
         }
+
+//        // delete task button
+//        deleteTask?.setOnClickListener {
+////            deleteTask()
+//            Toast.makeText(context, "Delete clicked", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun onCreateView(
@@ -120,6 +129,16 @@ class HomeFragment : Fragment() {
             // dismiss dialog
             mAlertDialog.dismiss()
         }
+    }
+
+//    @Override
+//    fun deleteTask(item: Item) {
+//        todoViewModel.removeItemFromTodoList(item)
+//    }
+
+    override fun click_item(item: Item) {
+        var customDialog = DeleteDialogFragment(todoViewModel, item)
+        customDialog.show(activity?.supportFragmentManager!!, "customDialog")
     }
 }
 
