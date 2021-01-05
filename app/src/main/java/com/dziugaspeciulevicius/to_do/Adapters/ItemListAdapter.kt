@@ -33,6 +33,7 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
 
         init {
             itemView.setOnClickListener(this)
+            itemView.delete_task.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
@@ -40,7 +41,10 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
             if (adapterPosition == RecyclerView.NO_POSITION) return
 
             val clicked = getItem(adapterPosition)
-            interaction?.click_item(clicked)
+            when(v){
+                v?.delete_task -> interaction?.delete_item(clicked)
+                else -> interaction?.click_item(clicked)
+            }
         }
 
         fun bind(item: Item) = with(itemView) {
@@ -52,7 +56,8 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
 
     // we can create interactions with items here
     interface Interaction {
-        fun click_item(item: Item);
+        fun click_item(item: Item)
+        fun delete_item(item: Item)
     }
 
     private class ItemDC : DiffUtil.ItemCallback<Item>() {

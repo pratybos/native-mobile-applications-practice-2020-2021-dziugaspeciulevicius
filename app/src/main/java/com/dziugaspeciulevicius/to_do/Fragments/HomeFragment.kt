@@ -33,8 +33,6 @@ class HomeFragment : Fragment(), ItemListAdapter.Interaction {
     private lateinit var itemViewModel: ItemViewModel
     private lateinit var todoViewModel: TodoViewModel
     private val user = FirebaseAuth.getInstance().currentUser
-//    private var mAuth: FirebaseAuth? = null
-//    private val mAuth = FirebaseAuth.getInstance().currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,7 +72,7 @@ class HomeFragment : Fragment(), ItemListAdapter.Interaction {
 
 //        // delete task button
 //        deleteTask?.setOnClickListener {
-////            deleteTask()
+//            deleteTask()
 //            Toast.makeText(context, "Delete clicked", Toast.LENGTH_SHORT).show()
 //        }
     }
@@ -139,6 +137,10 @@ class HomeFragment : Fragment(), ItemListAdapter.Interaction {
     override fun click_item(item: Item) {
         var customDialog = DeleteDialogFragment(todoViewModel, item)
         customDialog.show(activity?.supportFragmentManager!!, "customDialog")
+    }
+
+    override fun delete_item(item: Item) {
+        todoViewModel.removeItemFromTodoList(item)
     }
 }
 
